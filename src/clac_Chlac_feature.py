@@ -37,8 +37,8 @@ mask_filepath = "./../config/mask_chlac.csv"
 masks, mask_n = utils.prepare_masks_chlac(mask_filepath)
 
 chlac_features = []
-for f in range(FRAMES):
-    sys.stdout.write("\r" + str(round(100 * f / FRAMES, 1)) + "%")
+for f in range(len(images) - 2):
+    sys.stdout.write("\r" + str(round(100 * f / (len(images) - 2), 1)) + "%")
     sys.stdout.flush()
 
     # extract images for 3 frames to create voxel data
@@ -54,9 +54,6 @@ for f in range(FRAMES):
     #     print("features of the two method are equel.")
 
     chlac_features.append(feature)
-
-# not use chlac feature of initial and last frame
-chlac_features = chlac_features[1:-1]
 
 chlac_features = pd.DataFrame(np.array(chlac_features))
 chlac_features.to_csv("./../results/chlac_features.csv",
