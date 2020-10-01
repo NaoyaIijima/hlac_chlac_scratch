@@ -3,4 +3,4 @@
 
 # references
 - mask of HLAC ： https://rest-term.com/archives/2889/
-- mask of CHLAC : 
+- mask of CHLAC : https://www.sciencedirect.com/science/article/pii/S0167865508002900
